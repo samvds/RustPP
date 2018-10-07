@@ -7,6 +7,11 @@
 
     public class RulesCommand : ChatCommand
     {
+        string cyan = "[color #00FFFF]";
+        string green = "[color #00FF00]";
+        string red = "[color #FF0000]";
+        string yellow = "[color #FFFF00]";
+        string white = "[color #FFFFFF]";
         public override void Execute(ref ConsoleSystem.Arg Arguments, ref string[] ChatArguments)
         {
             var pl = Fougerite.Server.Cache[Arguments.argUser.userID];
@@ -19,7 +24,7 @@
             }
             else
             {
-                pl.MessageFrom(Core.Name, "No rules are currently set.");
+                pl.MessageFrom(Core.Name, yellow +"☢ " + red + "No rules are currently set.");
             }
         }
     }

@@ -10,13 +10,18 @@
     {
         public static Hashtable shared_doors = new Hashtable();
 
+        string cyan = "[color #00FFFF]";
+        string green = "[color #00FF00]";
+        string red = "[color #FF0000]";
+        string yellow = "[color #FFFF00]";
+        string white = "[color #FFFFFF]";
         public override void Execute(ref ConsoleSystem.Arg Arguments, ref string[] ChatArguments)
         {
             var pl = Fougerite.Server.Cache[Arguments.argUser.userID];
             string playerName = string.Join(" ", ChatArguments).Trim(new char[] { ' ', '"' });
             if (playerName == string.Empty)
             {
-                pl.MessageFrom(Core.Name, "Sharing Doors Usage:  /share playerName");
+                pl.MessageFrom(Core.Name, "Use " + cyan + "/share \"player\"" + white + " - to share your doors with a specific player.");
                 return;
             }
             PList list = new PList();
@@ -46,7 +51,7 @@
             }
             if (list.Count == 1)
             {
-                pl.MessageFrom(Core.Name, string.Format("No player found with the name {0}.", playerName));
+                pl.MessageFrom(Core.Name, string.Format(yellow + "☢ " + white + "No player matches the name: " + yellow + "{0}", playerName));
                 return;
             }
             pl.MessageFrom(Core.Name, string.Format("{0}  player{1} {2}: ", ((list.Count - 1)).ToString(), (((list.Count - 1) > 1) ? "s match" : " matches"), playerName));
@@ -54,8 +59,8 @@
             {
                 pl.MessageFrom(Core.Name, string.Format("{0} - {1}", i, list.PlayerList[i].DisplayName));
             }
-            pl.MessageFrom(Core.Name, "0 - Cancel");
-            pl.MessageFrom(Core.Name, "Please enter the number matching the player to share doors with.");
+            pl.MessageFrom(Core.Name, "☢ " + cyan + "0 - Cancel");
+            pl.MessageFrom(Core.Name, "☢ " + cyan + "Please enter the number matching the player.");
             Core.shareWaitList[pl.UID] = list;
         }
 
@@ -64,7 +69,7 @@
             var pl = Fougerite.Server.Cache[Arguments.argUser.userID];
             if (id == 0)
             {
-                pl.MessageFrom(Core.Name, "Cancelled!");
+                pl.MessageFrom(Core.Name, yellow + "☢" + green + "Cancelled!");
                 return;
             }
             PList list = (PList)Core.shareWaitList[pl.UID];
@@ -75,7 +80,7 @@
         {
             if (friend.UserID == sharing.UID)
             {
-                sharing.MessageFrom(Core.Name, "Why would you share with yourself?");
+                sharing.MessageFrom(Core.Name, yellow + "☢ " + red + "You can't share doors with yourself.");
                 return;
             }
             ArrayList shareList = (ArrayList)shared_doors[sharing.UID];
@@ -87,15 +92,15 @@
             }
             if (shareList.Contains(friend.UserID))
             {
-                sharing.MessageFrom(Core.Name, string.Format("You have already shared doors with {0}.", friend.DisplayName));
+                sharing.MessageFrom(Core.Name, string.Format(yellow + "☢ " + red + "You have already shared doors with" + yellow + " {0}" + red + ".", friend.DisplayName));
                 return;
             }
             shareList.Add(friend.UserID);
             shared_doors[sharing.UID] = shareList;
-            sharing.MessageFrom(Core.Name, string.Format("You have shared doors with {0}.", friend.DisplayName));
+            sharing.MessageFrom(Core.Name, string.Format(yellow + "☢ " + green + "You have shared doors with" + yellow + " {0}" + green + ".", friend.DisplayName));
             Fougerite.Player client = Fougerite.Server.GetServer().FindPlayer(friend.UserID.ToString());
             if (client != null)
-                client.MessageFrom(Core.Name, string.Format("{0} has shared doors with you.", sharing.Name));
+                client.MessageFrom(Core.Name, string.Format(yellow + "☢ " + green + "Player: " + yellow + "{0} " + green + "has shared doors with you.", sharing.Name));
         }
 
         public Hashtable GetSharedDoors()

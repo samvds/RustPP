@@ -100,28 +100,25 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\Downloads\Fougerite-master\Fougerite\References\PatchedRustDlls\Assembly-CSharp.dll</HintPath>
+      <HintPath>C:\Users\vande\Desktop\SocialLinks-master\Server\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Facepunch.ID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\Downloads\Fougerite-master\Fougerite\References\OriginalRustDLLs\Facepunch.ID.dll</HintPath>
+      <HintPath>C:\Users\vande\Downloads\Fougerite-master\Fougerite\References\OriginalRustDLLs\Facepunch.ID.dll</HintPath>
     </Reference>
     <Reference Include="Facepunch.MeshBatch, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\Downloads\Fougerite-master\Fougerite\References\PatchedRustDlls\Facepunch.MeshBatch.dll</HintPath>
+      <HintPath>C:\Users\vande\Downloads\Fougerite-master\Fougerite\References\PatchedRustDlls\Facepunch.MeshBatch.dll</HintPath>
     </Reference>
     <Reference Include="Fougerite, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\SocialLinks-master\Server\Fougerite.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.ProtocolBuffers, Version=2.4.1.521, Culture=neutral, PublicKeyToken=55f7125234beb589">
-      <HintPath>..\..\Downloads\Fougerite-master\Fougerite\References\OriginalRustDLLs\Google.ProtocolBuffers.dll</HintPath>
+      <HintPath>C:\Users\vande\Desktop\SocialLinks-master\Server\Fougerite.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
     <Reference Include="uLink, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\Downloads\Fougerite-master\Fougerite\References\PatchedRustDlls\uLink.dll</HintPath>
+      <HintPath>C:\Users\vande\Downloads\Fougerite-master\Fougerite\References\PatchedRustDlls\uLink.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\SocialLinks-master\Server\UnityEngine.dll</HintPath>
+      <HintPath>C:\Users\vande\Downloads\Fougerite-master\Fougerite\References\OriginalRustDLLs\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
