@@ -53,17 +53,19 @@
 
         public static void shutdown_tick()
         {
+            string cyan = "[color #00FFFF]";
+            string white = "[color #FFFFFF]";
             if (time == 0)
             {
                 //savealldata();
                 Helper.CreateSaves();
-                Server.GetServer().BroadcastFrom(Core.Name, "Server Shutdown NOW!");
+                Server.GetServer().BroadcastFrom(Core.Name, "☢ " + cyan + "Immediate server shutdown!");
                 Process.GetCurrentProcess().Kill();
             }
             else
             {
-                Logger.Log("Server Shutting down in " + time + " seconds");
-                Server.GetServer().BroadcastFrom(Core.Name, "Server Shutting down in " + time + " seconds");
+                Logger.Log("☢ Server is shutting down in: " + cyan + time + white + " seconds.");
+                Server.GetServer().BroadcastFrom(Core.Name, "☢ Server is shutting down in: " + cyan + time + white + " seconds.");
             }
             time -= 10;
         }

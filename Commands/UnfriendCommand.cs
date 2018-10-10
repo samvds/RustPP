@@ -7,26 +7,31 @@
 
     public class UnfriendCommand : ChatCommand
     {
+        string cyan = "[color #00FFFF]";
+        string green = "[color #00FF00]";
+        string red = "[color #FF0000]";
+        string yellow = "[color #FFFF00]";
+        string white = "[color #FFFFFF]";
         public override void Execute(ref ConsoleSystem.Arg Arguments, ref string[] ChatArguments)
         {
             var pl = Fougerite.Server.Cache[Arguments.argUser.userID];
             string playerName = string.Join(" ", ChatArguments).Trim(new char[] { ' ', '"' });
             if (playerName == string.Empty)
             {
-                pl.MessageFrom(Core.Name, "Friends Management Usage:  /unfriend playerName");
+                pl.MessageFrom(Core.Name, "Use " + cyan + "/unfriend \"player\"" + white + " - to remove a specific player from your friends list.");
                 return;
             }
             FriendsCommand command = (FriendsCommand)ChatCommand.GetCommand("friends");
             FriendList friendsList = (FriendList)command.GetFriendsLists()[pl.UID];
             if (friendsList == null)
             {
-                pl.MessageFrom(Core.Name, "You currently have no friends.");
+                pl.MessageFrom(Core.Name, yellow + "☢ " + red + "You currently have no friends to remove.");
                 return;
             }
             if (friendsList.isFriendWith(playerName))
             {
                 friendsList.RemoveFriend(playerName);
-                pl.MessageFrom(Core.Name, "You have removed " + playerName + " from your friends list.");
+                pl.MessageFrom(Core.Name, yellow + "☢ " + green + "You have removed: " + yellow + playerName + green + " from your friends list.");
                 if (friendsList.HasFriends())
                 {
                     command.GetFriendsLists()[pl.UID] = friendsList;
@@ -55,7 +60,7 @@
                 }
                 if (list.Count == 1)
                 {
-                    pl.MessageFrom(Core.Name, string.Format("You are not friends with {0}.", playerName));
+                    pl.MessageFrom(Core.Name, string.Format(yellow + "☢ " + red + "You are not friends with {0}.", playerName));
                     return;
                 }
 
@@ -64,8 +69,8 @@
                 {
                     pl.MessageFrom(Core.Name, string.Format("{0} - {1}", i, list.PlayerList[i].DisplayName));
                 }
-                pl.MessageFrom(Core.Name, "0 - Cancel");
-                pl.MessageFrom(Core.Name, "Please enter the number matching the friend to remove.");
+                pl.MessageFrom(Core.Name, "☢ " + cyan + "0 - Cancel");
+                pl.MessageFrom(Core.Name, "☢ " + cyan + "Please enter the number matching the player.");
                 Core.unfriendWaitList[pl.UID] = list;
             }
         }
@@ -75,7 +80,7 @@
             var pl = Fougerite.Server.Cache[Arguments.argUser.userID];
             if (id == 0)
             {
-                pl.MessageFrom(Core.Name, "Cancelled!");
+                pl.MessageFrom(Core.Name, yellow + "☢" + green + "Cancelled!");
                 return;
             }
             PList list = (PList)Core.unfriendWaitList[pl.UID];
@@ -89,7 +94,7 @@
 
             friendsList.RemoveFriend(exfriend.UserID);
             command.GetFriendsLists()[unfriending.UID] = friendsList;
-            unfriending.MessageFrom(Core.Name, string.Format("You have removed {0} from your friends list.", exfriend.DisplayName));
+            unfriending.MessageFrom(Core.Name, string.Format(yellow + "☢ " + green + "You have removed: " + yellow + " {0} " + green + " from your friends list.", exfriend.DisplayName));
         }
     }
 }

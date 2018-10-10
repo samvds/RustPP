@@ -8,6 +8,8 @@
     [Serializable]
     public class FriendList : ArrayList
     {
+        string cyan = "[color #00FFFF]";
+        string white = "[color #FFFFFF]";
         public void AddFriend(string fName, ulong fUID)
         {
             this.Add(new Friend(fName, fUID));
@@ -74,7 +76,7 @@
 
             int friendsPerRow = 7;
             pl.MessageFrom(Core.Name,
-                string.Format("You currently have {0} friend{1} online:",
+                string.Format("☢ You currently have: " + cyan + " {0} " + white + "friend{1} online:",
                     (onlineFriends.Count == 0 ? "no" : onlineFriends.Count.ToString()), ((onlineFriends.Count != 1) ? "s" : string.Empty)));
 
             if (onlineFriends.Count <= friendsPerRow && onlineFriends.Count > 0)
@@ -92,7 +94,7 @@
             }
 
             pl.MessageFrom(Core.Name,
-                string.Format("You have {0} offline friend{1}:",
+                string.Format("☢ You have: " + cyan + "{0} " + white + "offline friend{1}:",
                     (offlineFriends.Count == 0 ? "no" : offlineFriends.Count.ToString()), ((offlineFriends.Count != 1) ? "s" : string.Empty)));
            
             if (offlineFriends.Count <= friendsPerRow && offlineFriends.Count > 0)

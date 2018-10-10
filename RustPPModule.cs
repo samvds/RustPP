@@ -17,7 +17,7 @@
         }
         public override string Author
         {
-            get { return "xEnt22, mikec, DreTaX"; }
+            get { return "DreTaX & samvds (xEnt22 & mikec)"; }
         }
         public override string Description
         {
@@ -25,7 +25,7 @@
         }
         public override Version Version
         {
-            get { return new Version("1.1.8.1"); }
+            get { return new Version("2.0"); }
         }
 
         public static string GetAbsoluteFilePath(string fileName)
@@ -40,10 +40,10 @@
 
         public static string ConfigFile;
         public static string ConfigsFolder;
-        public static string JoinMsg = "has joined the server";
-        public static string LeaveMsg = "has left the server";
-        public static string StarterMsg = "You have spawned a Starter Kit!";
-        public static string StarterCDMsg = "You must wait awhile before using this..";
+        public static string JoinMsg = "has joined the server!";
+        public static string LeaveMsg = "has left the server...";
+        public static string StarterMsg = "You have spawned a starter kit!";
+        public static string StarterCDMsg = "You must wait a while before using this again.";
 
         public override void Initialize()
         {
@@ -91,7 +91,7 @@
             Fougerite.Hooks.OnChatRaw += ChatReceived;
             Fougerite.Hooks.OnChat += Chat;
             Fougerite.Hooks.OnFallDamage += OnFallDamage;
-            Fougerite.Hooks.OnServerSaved += OnServerSaved;
+            //Fougerite.Hooks.OnServerSaved += OnServerSaved;
             Server.GetServer().LookForRustPP();
         }
 
@@ -110,7 +110,7 @@
             Fougerite.Hooks.OnChatRaw -= ChatReceived;
             Fougerite.Hooks.OnChat -= Chat;
             Fougerite.Hooks.OnFallDamage -= OnFallDamage;
-            Fougerite.Hooks.OnServerSaved -= OnServerSaved;
+            //Fougerite.Hooks.OnServerSaved -= OnServerSaved;
             TimedEvents.timer.Stop();
             Logger.LogDebug("DeInitialized RPP");
         }
@@ -222,10 +222,12 @@
 
         void Chat(Fougerite.Player p, ref ChatString text)
         {
+            string red = "[color #FF0000]";
+            string yellow = "[color #FFFF00]";
             if (Core.IsEnabled() && Core.muteList.Contains(p.UID))
             {
                 text.NewText = "";
-                p.MessageFrom(Core.Name, "You are muted.");
+                p.MessageFrom(Core.Name, yellow + "☢ " + red + "You are muted.");
             }
         }
 

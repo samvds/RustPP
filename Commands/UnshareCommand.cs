@@ -8,20 +8,25 @@ namespace RustPP.Commands
 
     public class UnshareCommand : ChatCommand
     {
+        string cyan = "[color #00FFFF]";
+        string green = "[color #00FF00]";
+        string red = "[color #FF0000]";
+        string yellow = "[color #FFFF00]";
+        string white = "[color #FFFFFF]";
         public override void Execute(ref ConsoleSystem.Arg Arguments, ref string[] ChatArguments)
         {
             var pl = Fougerite.Server.Cache[Arguments.argUser.userID];
             string playerName = string.Join(" ", ChatArguments).Trim(new char[] { ' ', '"' });
             if (playerName == string.Empty)
             {
-                pl.MessageFrom(Core.Name, "Sharing Doors Usage:  /unshare playerName");
+                pl.MessageFrom(Core.Name, "Use " + cyan + "/unshare \"player\"" + white + " - to unmute a specific player.");
                 return;
             }
             ShareCommand command = (ShareCommand)ChatCommand.GetCommand("share");
             ArrayList shareList = (ArrayList)command.GetSharedDoors()[Arguments.argUser.userID];
             if (shareList == null)
             {
-                pl.MessageFrom(Core.Name, "You aren't sharing doors with anyone.");
+                pl.MessageFrom(Core.Name, yellow + "☢ " + red + "You aren't sharing doors with anyone.");
                 return;
             }
             PList list = new PList();
@@ -52,7 +57,7 @@ namespace RustPP.Commands
             }
             if (list.Count == 1)
             {
-                pl.MessageFrom(Core.Name, string.Format("You aren't sharing doors with {0}.", playerName));
+                pl.MessageFrom(Core.Name, string.Format(yellow + "☢ " + red + "You aren't sharing doors with:" + yellow + " {0} " + red + ".", playerName));
                 return;
             }
             pl.MessageFrom(Core.Name, string.Format("{0}  players{1} {2}: ", ((list.Count - 1)).ToString(), (((list.Count - 1) > 1) ? "s match" : " matches"), playerName));
@@ -60,8 +65,8 @@ namespace RustPP.Commands
             {
                 pl.MessageFrom(Core.Name, string.Format("{0} - {1}", i, list.PlayerList[i].DisplayName));
             }
-            pl.MessageFrom(Core.Name, "0 - Cancel");
-            pl.MessageFrom(Core.Name, "Please enter the number matching the player you won't share doors with.");
+            pl.MessageFrom(Core.Name, "☢ " + cyan + "0 - Cancel");
+            pl.MessageFrom(Core.Name, "☢ " + cyan + "Please enter the number matching the player.");
             Core.unshareWaitList[pl.UID] = list;
         }
 
@@ -70,7 +75,7 @@ namespace RustPP.Commands
             var pl = Fougerite.Server.Cache[Arguments.argUser.userID];
             if (id == 0)
             {
-                pl.MessageFrom(Core.Name, "Cancelled!");
+                pl.MessageFrom(Core.Name, yellow + "☢" + green + "Cancelled!");
                 return;
             }
             PList list = (PList)Core.unshareWaitList[pl.UID];
@@ -82,10 +87,10 @@ namespace RustPP.Commands
             ShareCommand command = (ShareCommand)ChatCommand.GetCommand("share");
 
             ((ArrayList)command.GetSharedDoors()[unsharing.UID]).Remove(exfriend.UserID);
-            unsharing.MessageFrom(Core.Name, string.Format("{0} can use your doors no longer.", exfriend.DisplayName));
+            unsharing.MessageFrom(Core.Name, string.Format(yellow + "☢" + green + "Player:" + yellow + " {0} " + green + "can no longer open your doors.", exfriend.DisplayName));
             Fougerite.Player client = Fougerite.Server.GetServer().FindPlayer(exfriend.UserID.ToString());
             if (client != null)
-                client.MessageFrom(Core.Name, string.Format("{0} is no longer sharing his doors with you.", unsharing.Name));
+                client.MessageFrom(Core.Name, string.Format(yellow + "☢" + green + "You can no longer open: " + yellow + "{0}'s" + green + " doors.", unsharing.Name));
         }
     }
 }

@@ -8,11 +8,9 @@
     {
         private static string MasterAdminPreset = "CanKick|CanBan|CanUnban|CanTeleport|CanLoadout|CanAnnounce|CanSpawnItem|CanGiveItem|CanReload|CanSaveAll|CanAddAdmin|CanDeleteAdmin|CanGetFlags|CanInstaKO|CanAddFlags|CanUnflag|CanWhiteList|CanKill|CanMute|CanUnmute|CanGodMode|RCON";
 
-        string cyan = "[color #00FFFF]";
         string green = "[color #00FF00]";
         string red = "[color #FF0000]";
         string yellow = "[color #FFFF00]";
-        string white = "[color #FFFFFF]";
         public override void Execute(ref ConsoleSystem.Arg Arguments, ref string[] ChatArguments)
         {
             var pl = Fougerite.Server.Cache[Arguments.argUser.userID];

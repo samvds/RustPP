@@ -16,7 +16,7 @@ namespace RustPP
     public class Core
     {
         public static string Name = "Rust++";
-        public static string Version = "1.1.8.0";
+        public static string Version = "2.0";
         public static IniParser config;
         public static PList blackList = new PList();
         public static PList whiteList = new PList();
@@ -90,7 +90,7 @@ namespace RustPP
                 float mega = (fi.Length / 1024f) / 1024f;
                 if (mega > 0.70)
                 {
-                    Logger.LogWarning("Rust++ Cache.xml and Cache.rpp is getting big. Deletion is suggested.");
+                    Logger.LogWarning("Rust++ Cache.xml and Cache.rpp are getting big. Deletion is suggested.");
                 }
                 SerializableDictionary<ulong, string> userDict = Helper.ObjectFromXML<SerializableDictionary<ulong, string>>(RustPPModule.GetAbsoluteFilePath("userCache.xml"));
                 userCache = new Dictionary<ulong, string>(userDict);

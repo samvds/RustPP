@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("RustPP")]
-[assembly: AssemblyCopyright("Copyright © 2015-2018 Pluton Team & samvds")]
+[assembly: AssemblyCopyright("Copyright © 2018 Fougerite & samvds")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

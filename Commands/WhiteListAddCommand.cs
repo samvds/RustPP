@@ -8,13 +8,18 @@
 
     internal class WhiteListAddCommand : ChatCommand
     {
+        string cyan = "[color #00FFFF]";
+        string green = "[color #00FF00]";
+        string red = "[color #FF0000]";
+        string yellow = "[color #FFFF00]";
+        string white = "[color #FFFFFF]";
         public override void Execute(ref ConsoleSystem.Arg Arguments, ref string[] ChatArguments)
         {
             var pl = Fougerite.Server.Cache[Arguments.argUser.userID];
             string playerName = string.Join(" ", ChatArguments).Trim(new char[] { ' ', '"' });
             if (playerName == string.Empty)
             {
-                pl.MessageFrom(Core.Name, "Whitelist Usage:  /addwl playerName");
+                pl.MessageFrom(Core.Name, "Use " + cyan + "/addwl \"player\"" + white + " - to add a player to the whitelist.");
                 return;
             }
             PList list = new PList();
@@ -44,7 +49,7 @@
             }
             if (list.Count == 1)
             {
-                pl.MessageFrom(Core.Name, "No player found with the name: " + playerName);
+                pl.MessageFrom(Core.Name, yellow + "☢ " + red + "No player matches the name: " + yellow + playerName + red + ".");
                 return;
             }
             pl.MessageFrom(Core.Name, string.Format("{0}  player{1} {2}: ", ((list.Count - 1)).ToString(), (((list.Count - 1) > 1) ? "s match" : " matches"), playerName));
@@ -52,8 +57,8 @@
             {
                 pl.MessageFrom(Core.Name, string.Format("{0} - {1}", i, list.PlayerList[i].DisplayName));
             }
-            pl.MessageFrom(Core.Name, "0 - Cancel");
-            pl.MessageFrom(Core.Name, "Please enter the number matching the player to whitelist.");
+            pl.MessageFrom(Core.Name, "☢ " + cyan + "0 - Cancel");
+            pl.MessageFrom(Core.Name, "☢ " + cyan + "Please enter the number matching the player.");
             Core.whiteWaitList[pl.UID] = list;
         }
 
@@ -64,7 +69,7 @@
             {
                 if (id == 0)
                 {
-                    pl.MessageFrom(Core.Name, "Cancelled!");
+                    pl.MessageFrom(Core.Name, yellow + "☢" + green + "Cancelled!");
                     return;
                 }
                 PList list = (PList)Core.whiteWaitList[pl.UID];
@@ -76,7 +81,7 @@
         {
             if (Core.whiteList.Contains(white.UserID))
             {
-                myAdmin.MessageFrom(Core.Name, white.DisplayName + " is already whitelisted.");
+                myAdmin.MessageFrom(Core.Name, yellow + "☢" + green + "Player: " + yellow + white.DisplayName + green + " is already whitelisted.");
             } else
             {
                 Core.whiteList.Add(white);

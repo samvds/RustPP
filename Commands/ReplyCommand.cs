@@ -9,7 +9,6 @@
         private Hashtable replies = new Hashtable();
 
         string teal = "[color #00FFFF]";
-        string green = "[color #00FF00]";
         string red = "[color #FF0000]";
         string yellow = "[color #FFFF00]";
         string white = "[color #FFFFFF]";

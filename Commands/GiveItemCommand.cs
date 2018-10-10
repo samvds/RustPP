@@ -21,7 +21,7 @@
             {
                 return;
             }
-            string usage = "Use " + cyan + "give \"player\" \"item\" \"quantity\"" + white + " - to give a certain amount of an item to a player.";
+            string usage = "Use " + cyan + "/give \"player\" \"item\" \"quantity\"" + white + " - to give a certain amount of an item to a player.";
             if (ChatArguments.Length < 2) // minimum arguments = 2
             {
                 pl.MessageFrom(Core.Name, usage);
@@ -124,8 +124,8 @@
                 }
                 Logger.LogDebug(string.Format("[GiveItemCommand] quantity={0} item={1} recipient={2}", quantity, itemName, recipName));
                 inv.giveplayer(ref Arguments);
-                pl.MessageFrom(RustPP.Core.Name, string.Format(yellow + "☢ " + red + "Player:" + yellow + " {2} " + red + "has been given " + yellow + "{0} " + red + "of" + yellow + " {1}" + red + ".", quantity, itemName, recipName));
-                np.MessageFrom(RustPP.Core.Name, string.Format(yellow + "☢ " + red + "Player:" + yellow + " {0} " + red + "gave you " + yellow + "{0} " + red + "of" + yellow + " {1}" + red + ".", Arguments.argUser.displayName, quantity, itemName));
+                pl.MessageFrom(RustPP.Core.Name, string.Format(yellow + "☢ " + green + "Player:" + yellow + " {2} " + green + "has been given " + yellow + "{0} " + green + "of" + yellow + " {1}" + green + ".", quantity, itemName, recipName));
+                np.MessageFrom(RustPP.Core.Name, string.Format(yellow + "☢ " + green + "Player:" + yellow + " {0} " + green + "gave you " + yellow + "{0} " + green + "of" + yellow + " {1}" + green + ".", Arguments.argUser.displayName, quantity, itemName));
             }
             else
             {

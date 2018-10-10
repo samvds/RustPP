@@ -10,6 +10,11 @@ namespace RustPP.Commands
 
     public class TeleportToCommand : ChatCommand
     {
+        string cyan = "[color #00FFFF]";
+        string green = "[color #00FF00]";
+        string red = "[color #FF0000]";
+        string yellow = "[color #FFFF00]";
+        string white = "[color #FFFFFF]";
         [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Unicode, SetLastError = true)]
         delegate IntPtr LoadLibrary_Delegate(string lpFileName);
 
@@ -37,14 +42,14 @@ namespace RustPP.Commands
                 if (b && b2 && b3)
                 {
                     pl.TeleportTo(n, n2, n3, false);
-                    pl.MessageFrom(Core.Name, "You have teleported to the coords!");
+                    pl.MessageFrom(Core.Name, yellow + "☢ " + green + "You have teleported to the given coordinates!");
                     return;
                 }
             }
             string playerName = string.Join(" ", ChatArguments).Trim(new char[] { ' ', '"' });
             if (playerName == string.Empty)
             {
-                pl.MessageFrom(Core.Name, "Teleport Usage:  /tpto playerName");
+                pl.MessageFrom(Core.Name, "Use " + cyan + "/tpto \"player\"" + white + " - to teleport to a specific player's location.");
                 return;
             }
             List<string> list = new List<string>();
@@ -60,15 +65,15 @@ namespace RustPP.Commands
                         {
                             if (V3Equal(client.Location, Vector3.zero))
                             {
-                                pl.MessageFrom(Core.Name, client.Name + " is still loading and has null position!");
+                                pl.MessageFrom(Core.Name, yellow + "☢ " + green + "Player: " + yellow + client.Name + " is still loading and has no position.");
                                 return;
                             }
                             pl.TeleportTo(client, 1.5f, false);
-                            pl.MessageFrom(Core.Name, "You have teleported to " + client.Name);
+                            pl.MessageFrom(Core.Name, yellow + "☢ " + green + "You have teleported to " + yellow + client.Name + green + ".");
                         }
                         else
                         {
-                            pl.MessageFrom(Core.Name, client.Name + " seems to be offline");
+                            pl.MessageFrom(Core.Name, yellow + "☢ " + green + "Player: " + yellow + client.Name + " seems to be offline.");
                         }
                         return;
                     }
@@ -82,12 +87,12 @@ namespace RustPP.Commands
                 {
                     pl.MessageFrom(Core.Name, j + " - " + list[j]);
                 }
-                pl.MessageFrom(Core.Name, "0 - Cancel");
-                pl.MessageFrom(Core.Name, "Please enter the number matching the player you were looking for.");
+                pl.MessageFrom(Core.Name, "☢ " + cyan + "0 - Cancel");
+                pl.MessageFrom(Core.Name, "☢ " + cyan + "Please enter the number matching the player.");
                 tpWaitList[pl.UID] = list;
             } else
             {
-                pl.MessageFrom(Core.Name, "No player found with the name: " + playerName);
+                pl.MessageFrom(Core.Name, yellow + "☢ " + red + "No player matches the name: " + yellow + playerName + red + ".");
             }
         }
 
@@ -105,7 +110,7 @@ namespace RustPP.Commands
                 string str = list[choice];
                 if (choice == 0)
                 {
-                    pl.MessageFrom(Core.Name, "Cancelled!");
+                    pl.MessageFrom(Core.Name, yellow + "☢" + green + "Cancelled!");
                     tpWaitList.Remove(pl.UID);
                 }
                 else
