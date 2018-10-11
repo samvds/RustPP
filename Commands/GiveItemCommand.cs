@@ -125,7 +125,7 @@
                 Logger.LogDebug(string.Format("[GiveItemCommand] quantity={0} item={1} recipient={2}", quantity, itemName, recipName));
                 inv.giveplayer(ref Arguments);
                 pl.MessageFrom(RustPP.Core.Name, string.Format(yellow + "☢ " + green + "Player:" + yellow + " {2} " + green + "has been given " + yellow + "{0} " + green + "of" + yellow + " {1}" + green + ".", quantity, itemName, recipName));
-                np.MessageFrom(RustPP.Core.Name, string.Format(yellow + "☢ " + green + "Player:" + yellow + " {0} " + green + "gave you " + yellow + "{0} " + green + "of" + yellow + " {1}" + green + ".", Arguments.argUser.displayName, quantity, itemName));
+                np.MessageFrom(RustPP.Core.Name, string.Format(yellow + "☢ " + green + "Player:" + yellow + " {0} " + green + "gave you " + yellow + "{1} " + green + "of" + yellow + " {2}" + green + ".", Arguments.argUser.displayName, quantity, itemName));
             }
             else
             {
