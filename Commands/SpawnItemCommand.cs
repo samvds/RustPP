@@ -66,7 +66,7 @@
                 string itemName = string.Join(" ", remain.ToArray()).MatchItemName();
                 Arguments.Args = new string[] { itemName, quantity };
                 Logger.LogDebug(string.Format("[SpawnItemCommand] terms={0}, itemName={1}, quantity={2}", string.Join(",", remain.ToArray()), itemName, quantity));
-                pl.MessageFrom(Core.Name, string.Format(yellow + "☢ " + green + "There were " + yellow + "{0}" + green + " pieces of " + yellow + "{1}" + green + " have been placed in your inventory.", quantity, itemName));
+                pl.MessageFrom(Core.Name, string.Format(yellow + "☢ " + green + "Check your inventory! " + yellow + "{0}" + green + " piece(s) of " + yellow + "{1}" + green + " have been given to you.", quantity, itemName));
                 inv.give(ref Arguments);
             }
             else

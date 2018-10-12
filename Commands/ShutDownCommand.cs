@@ -33,7 +33,7 @@ namespace RustPP.Commands
                 {
                     Fougerite.Hooks.IsShuttingDown = true;
                     Fougerite.Server.GetServer().BroadcastFrom(Core.Name, yellow + "☢ " + green + "Saving all server files...");
-                    ServerSaveManager.AutoSave();
+                    //World.GetWorld().ServerSaveHandler.ManualBackGroundSave();
                     Fougerite.Server.GetServer().BroadcastFrom(Core.Name, yellow + "☢ " + green + "Saved all server files!");
                     Fougerite.Server.GetServer().BroadcastFrom(Core.Name, "☢ Server is shutting down in: " + cyan + ShutdownTime + white + " seconds.");
                     _timer = new Timer(TriggerTime * 1000);
