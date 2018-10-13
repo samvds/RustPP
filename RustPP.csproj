@@ -99,26 +99,32 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>C:\Users\vande\Desktop\SocialLinks-master\Server\Assembly-CSharp.dll</HintPath>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\vande\Downloads\Fougerite1.6.9\rust_server_Data\Managed\Prepatched_AssemblyDLLwithULink\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Facepunch.ID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="Facepunch.ID, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\vande\Downloads\Fougerite-master\Fougerite\References\OriginalRustDLLs\Facepunch.ID.dll</HintPath>
     </Reference>
-    <Reference Include="Facepunch.MeshBatch, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>C:\Users\vande\Downloads\Fougerite-master\Fougerite\References\PatchedRustDlls\Facepunch.MeshBatch.dll</HintPath>
+    <Reference Include="Facepunch.MeshBatch, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\vande\Downloads\Fougerite1.6.9\rust_server_Data\Managed\Prepatched_AssemblyDLLwithULink\Facepunch.MeshBatch.dll</HintPath>
     </Reference>
-    <Reference Include="Fougerite, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>C:\Users\vande\Desktop\SocialLinks-master\Server\Fougerite.dll</HintPath>
+    <Reference Include="Fougerite, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\vande\Downloads\Fougerite1.6.9\rust_server_Data\Managed\Fougerite.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
-    <Reference Include="uLink, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>C:\Users\vande\Downloads\Fougerite-master\Fougerite\References\PatchedRustDlls\uLink.dll</HintPath>
+    <Reference Include="uLink, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\vande\Downloads\Fougerite1.6.9\rust_server_Data\Managed\Prepatched_AssemblyDLLwithULink\uLink.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>C:\Users\vande\Downloads\Fougerite-master\Fougerite\References\OriginalRustDLLs\UnityEngine.dll</HintPath>
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\vande\Desktop\SocialLinks-master\Server\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
