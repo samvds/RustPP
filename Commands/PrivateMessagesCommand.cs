@@ -49,8 +49,8 @@ namespace RustPP.Commands
             }
             else
             {
-                recipient.MessageFrom("[PM]", teal + "[ " + white + sender.Name + teal + "→ " + white + "You " + teal + "]: " + white + message);
-                sender.MessageFrom("[PM]", teal + "[ " + white + "You " + teal + "→ " + white + recipient.Name + teal + " ]: " + white + message);
+                recipient.MessageFrom("[PM]", teal + "[ " + white + sender.Name + teal + " → " + white + "You " + teal + "]: " + white + message);
+                sender.MessageFrom("[PM]", teal + "[ " + white + "You" + teal + " → " + white + recipient.Name + teal + " ]: " + white + message);
                 //Util.say(recipient.netPlayer, string.Format("\"PM from {0}\"", Arguments.argUser.displayName.Replace('"', 'ˮ')), string.Format("\"{0}\"", message));
                 //Util.say(Arguments.argUser.networkPlayer,string.Format("\"PM to {0}\"", recipient.netUser.displayName.Replace('"', 'ˮ')),string.Format("\"{0}\"", message));
                 Hashtable replies = (ChatCommand.GetCommand("r") as ReplyCommand).GetReplies();
