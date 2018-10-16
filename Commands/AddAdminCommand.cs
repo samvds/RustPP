@@ -102,7 +102,7 @@ namespace RustPP.Commands
                     newAdmin.Flags = flags;
                 }
                 Administrator.AddAdmin(newAdmin);
-                Administrator.NotifyAdmins(string.Format("{0} has been made an administrator by {1}.", SecurityElement.Escape(newAdmin.DisplayName), player.Name));
+                Administrator.NotifyAdmins(string.Format(yellow + "☢ " + green + "Player: " + yellow + "{0} " + green + "has been made an administrator by" + yellow + " {1}" + green + ".", SecurityElement.Escape(newAdmin.DisplayName), player.Name));
             }
         }
     }

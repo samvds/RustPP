@@ -84,7 +84,7 @@
             }
             else
             {
-                Administrator.NotifyAdmins(string.Format("{0} is no longer an administrator; removed by {1}.", exAdmin.DisplayName, myAdmin.Name));
+                Administrator.NotifyAdmins(string.Format(yellow + "☢ " + green + "Player: " + yellow + "{0}" + green + " is no longer an admin thanks to " + yellow + "{1}" + green + ".", exAdmin.DisplayName, myAdmin.Name));
                 Administrator.DeleteAdmin(exAdmin.UserID);
             }
         }

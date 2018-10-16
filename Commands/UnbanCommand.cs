@@ -64,7 +64,7 @@
         public void UnbanPlayer(PList.Player unban, Fougerite.Player myAdmin)
         {
             Core.blackList.Remove(unban.UserID);
-            Administrator.NotifyAdmins(string.Format("{0} has been unbanned by {1}.", unban.DisplayName, myAdmin.Name));
+            Administrator.NotifyAdmins(string.Format(yellow + "☢ " + green + "Player: " + yellow + "{0}" + green + " has been unbanned by " + yellow + "{1}" + green + ".", unban.DisplayName, myAdmin.Name));
         }
     }
 }

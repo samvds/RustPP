@@ -78,7 +78,7 @@
             }
             Core.blackList.Add(ban);
             Administrator.DeleteAdmin(ban.UserID);
-            Administrator.NotifyAdmins(string.Format("{0} has been banned by {1}.", ban.DisplayName, myAdmin.Name));
+            Administrator.NotifyAdmins(string.Format(yellow + "☢ " + green + "Player: " + yellow + "{0}" + green + " has been banned by " + yellow + "{1}" + green + ".", ban.DisplayName, myAdmin.Name));
             Fougerite.Player client = Fougerite.Server.GetServer().FindPlayer(ban.UserID.ToString());
             if (client != null)
                 client.Disconnect();

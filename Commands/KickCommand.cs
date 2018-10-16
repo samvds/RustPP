@@ -71,7 +71,7 @@
                 myAdmin.MessageFrom(Core.Name, yellow + "☢ " + red + "You can't kick: " + yellow + badPlayer.Name + red + " he/she is an administrator.");
             } else
             {
-                Administrator.NotifyAdmins(string.Format("{0} has been kicked by {1}.", badPlayer.Name, myAdmin.Name));
+                Administrator.NotifyAdmins(string.Format(yellow + "☢ " + green + "Player: " + yellow + "{0}" + green + " has been kicked by " + yellow + "{1}" + green + ".", badPlayer.Name, myAdmin.Name));
                 badPlayer.Disconnect();
             }
         }

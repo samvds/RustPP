@@ -126,14 +126,14 @@
                 if (properName == "RCON" && !Administrator.GetAdmin(myAdmin.UID).HasPermission("RCON"))
                 {
                     myAdmin.MessageFrom(Core.Name, yellow + "☢ " + red + "You can't add the RCON flag to anyone's permissions.");
-                    Administrator.NotifyAdmins(string.Format("{0} attempted to add the {1} flag to {2}'s permissions.", myAdmin.Name, properName, administrator.DisplayName));
+                    Administrator.NotifyAdmins(string.Format(yellow + "☢ " + red + "Player: " + yellow + "{0}" + red + " attempted to add the " + yellow + "{1}" + red + " flag to " + yellow + "{2}'s " + red + "permissions.", myAdmin.Name, properName, administrator.DisplayName));
                 } else if (administrator.HasPermission(properName))
                 {
                     myAdmin.MessageFrom(Core.Name, string.Format(yellow + "☢ " + red + "You can't add this to:" + yellow + " {0} " + red + " as he/she already has the " + yellow + "{1}" + red + " flag.", administrator.DisplayName, properName));
                 } else
                 {
                     administrator.Flags.Add(properName);
-                    Administrator.NotifyAdmins(string.Format("{0} added the {1} flag to {2}'s permissions.", myAdmin.Name, properName, administrator.DisplayName));
+                    Administrator.NotifyAdmins(string.Format(yellow + "☢ " + green + "Player: " + yellow + "{0}" + green + " added the " + yellow + "{1}" + green + " flag to " + yellow + "{2}'s " + green + "permissions.", myAdmin.Name, properName, administrator.DisplayName));
                     if (properName == "RCON")
                     {                           
                         Fougerite.Player adminclient = Fougerite.Server.GetServer().FindPlayer(administrator.UserID.ToString());

@@ -85,7 +85,7 @@
             } else
             {
                 Core.whiteList.Add(white);
-                Administrator.NotifyAdmins(string.Format("{0} has been whitelisted by {1}.", white.DisplayName, myAdmin.Name));
+                Administrator.NotifyAdmins(string.Format(yellow + "☢ " + green + "Player: " + yellow + "{0}" + green + " has been whitelisted by " + yellow + "{1}" + green + ".", white.DisplayName, myAdmin.Name));
             }
         }
     }

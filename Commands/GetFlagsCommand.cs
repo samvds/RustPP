@@ -93,7 +93,7 @@
 
         public void GetFlags(Administrator administrator, Fougerite.Player myAdmin)
         {
-            myAdmin.MessageFrom(Core.Name, string.Format("{0}'s Flags: ", administrator.DisplayName));
+            myAdmin.MessageFrom(Core.Name, string.Format("☢ Player: " + cyan + "{0}'s" + white + " flags: ", administrator.DisplayName));
             int flagsPerRow = 7;
             if (administrator.Flags.Count <= flagsPerRow && administrator.Flags.Count > 0)
             {

@@ -104,13 +104,13 @@
                     }
                     else
                     {
-                        myAdmin.MessageFrom(Core.Name, string.Format("{0} is an administrator. You can't mute administrators.", mute.DisplayName));
+                        myAdmin.MessageFrom(Core.Name, string.Format(yellow + "☢ " + red + "Player: " + yellow + "{0}" + red + " is an administrator. You can't mute administrators.", mute.DisplayName));
                         //return;
                     }
                 }
             }
             Core.muteList.Add(mute);
-            Administrator.NotifyAdmins(string.Format("{0} has been muted by {1}.", mute.DisplayName, myAdmin.Name));
+            Administrator.NotifyAdmins(string.Format(yellow + "☢ " + green + "Player: " + yellow + "{0}" + green + " has been muted by " + yellow + "{1}" + green + ".", mute.DisplayName, myAdmin.Name));
         }
     }
 }

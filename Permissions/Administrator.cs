@@ -139,7 +139,7 @@ namespace RustPP.Permissions
                 Fougerite.Player user = Fougerite.Server.GetServer().FindPlayer(administrator.UserID.ToString());
                 if (user != null)
                 {
-                    user.MessageFrom(Core.Name + "Admins", msg);
+                    user.MessageFrom("[Admins]", msg);
                 }
             }
         }

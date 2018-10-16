@@ -65,7 +65,7 @@
         public void UnmutePlayer(PList.Player unmute, Fougerite.Player myAdmin)
         {
             Core.muteList.Remove(unmute.UserID);
-            Administrator.NotifyAdmins(string.Format("{0} has been unmuted by {1}.", unmute.DisplayName, myAdmin.Name));
+            Administrator.NotifyAdmins(string.Format(yellow + "☢ " + green + "Player: " + yellow + "{0}" + green + " has been unmuted by " + yellow + "{1}" + green + ".", unmute.DisplayName, myAdmin.Name));
             Fougerite.Player client = Fougerite.Server.GetServer().FindPlayer(unmute.UserID.ToString());
             if (client != null)
                 client.MessageFrom(Core.Name, string.Format(yellow + "☢ " + green + "You have been unmuted by: " + yellow + " {0} " + green + ".", myAdmin.Name));

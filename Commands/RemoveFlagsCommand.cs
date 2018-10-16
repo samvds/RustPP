@@ -129,11 +129,11 @@
                     Administrator.NotifyAdmins(string.Format("{0} attempted to remove the {1} flag to {2}'s permissions.", myAdmin.Name, properName, administrator.DisplayName));
                 } else if (!administrator.HasPermission(properName))
                 {
-                    myAdmin.MessageFrom(Core.Name, string.Format(yellow + "☢ " + red + "Operator " + yellow + "{0}" + red + " doesn't have the " + yellow + "{1}" + red + " flag.", administrator.DisplayName, properName));
+                    myAdmin.MessageFrom(Core.Name, string.Format(yellow + "☢ " + red + "Player: " + yellow + "{0}" + red + " doesn't have the " + yellow + "{1}" + red + " flag.", administrator.DisplayName, properName));
                 } else
                 {
                     administrator.Flags.Remove(properName);
-                    Administrator.NotifyAdmins(string.Format("{0} removed the {1} flag to {2}'s permissions.", myAdmin.Name, properName, administrator.DisplayName));
+                    Administrator.NotifyAdmins(string.Format(yellow + "☢ " + green + "Player: " + yellow + "{0}" + green + " has removed the " + yellow + "{1}" + green + " flag from " + yellow + "{2}'s " + green + "permissions.", myAdmin.Name, properName, administrator.DisplayName));
                     if (properName == "RCON")
                     {                           
                         Fougerite.Player adminclient = Fougerite.Server.GetServer().FindPlayer(administrator.UserID.ToString());

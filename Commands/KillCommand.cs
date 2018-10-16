@@ -74,7 +74,7 @@
             }
             else
             {
-                Administrator.NotifyAdmins(string.Format("{0} killed {1}.", myAdmin.Name, victim.Name));
+                Administrator.NotifyAdmins(string.Format(yellow + "☢ " + green + "Player: " + yellow + "{1}" + green + " has been killed by " + yellow + "{0}" + green + ".", myAdmin.Name, victim.Name));
                 victim.Kill();
                 //TakeDamage.Kill(myAdmin.PlayerClient.netUser.playerClient, victim.PlayerClient.netUser.playerClient, null);
             }
