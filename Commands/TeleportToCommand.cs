@@ -82,12 +82,12 @@ namespace RustPP.Commands
             }
             if (list.Count != 0)
             {
-                pl.MessageFrom(Core.Name, ((list.Count - 1)).ToString() + " Player" + (((list.Count - 1) > 1) ? "s" : "") + " were found: ");
+                pl.MessageFrom(Core.Name, "☢ " + cyan + ((list.Count - 1)).ToString() + white + (((list.Count - 1) == 1) ? "  Player was found:" : " Players were found:"));
                 for (int j = 1; j < list.Count; j++)
                 {
-                    pl.MessageFrom(Core.Name, j + " - " + list[j]);
+                    pl.MessageFrom(Core.Name, "☢ " + cyan + j + white + " - " + list[j]);
                 }
-                pl.MessageFrom(Core.Name, "☢ " + cyan + "0 - Cancel");
+                pl.MessageFrom(Core.Name, "☢ " + cyan + "0" + white + " - Cancel");
                 pl.MessageFrom(Core.Name, "☢ " + cyan + "Please enter the number matching the player.");
                 tpWaitList[pl.UID] = list;
             } else

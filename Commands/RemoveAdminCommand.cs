@@ -51,7 +51,7 @@
             }));
             if (list.Count == 1)
             {
-                pl.MessageFrom(Core.Name, string.Format(yellow + "☢ " + white + "No player matches the name: " + yellow + "{0}", playerName));
+                pl.MessageFrom(Core.Name, string.Format(yellow + "☢ " + red + "No player matches the name: " + yellow + "{0}" + red + ".", playerName));
                 return;
             }
             pl.MessageFrom(Core.Name, string.Format("{0}  player{1} {2}: ", ((list.Count - 1)).ToString(), (((list.Count - 1) > 1) ? "s match" : " matches"), playerName));
@@ -59,7 +59,7 @@
             {
                 pl.MessageFrom(Core.Name, string.Format("{0} - {1}", i, list[i].DisplayName));
             }
-            pl.MessageFrom(Core.Name, "☢ " + cyan + "0 - Cancel");
+            pl.MessageFrom(Core.Name, "☢ " + cyan + "0" + white + " - Cancel");
             pl.MessageFrom(Core.Name, "☢ " + cyan + "Please enter the number matching the player.");
             Core.adminRemoveWaitList[pl.UID] = list;
         }

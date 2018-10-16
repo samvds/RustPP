@@ -74,7 +74,7 @@
             {
                 pl.MessageFrom(Core.Name, string.Format("{0} - {1}", i, list[i].DisplayName));
             }
-            pl.MessageFrom(Core.Name, "☢ " + cyan + "0 - Cancel");
+            pl.MessageFrom(Core.Name, "☢ " + cyan + "0" + white + " - Cancel");
             pl.MessageFrom(Core.Name, "☢ " + cyan + "Please enter the number matching the player.");
             Core.adminFlagsWaitList[pl.UID] = list;
         }

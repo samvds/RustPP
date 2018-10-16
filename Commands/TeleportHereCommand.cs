@@ -56,7 +56,7 @@
                 {
                     pl.MessageFrom(Core.Name, j + " - " + list[j]);
                 }
-                pl.MessageFrom(Core.Name, "☢ " + cyan + "0 - Cancel");
+                pl.MessageFrom(Core.Name, "☢ " + cyan + "0" + white + " - Cancel");
                 pl.MessageFrom(Core.Name, "☢ " + cyan + "Please enter the number matching the player.");
                 TeleportToCommand command = ChatCommand.GetCommand("tpto") as TeleportToCommand;
                 command.GetTPWaitList().Add(pl.UID, list);
