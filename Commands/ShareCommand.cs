@@ -54,10 +54,10 @@
                 pl.MessageFrom(Core.Name, string.Format(yellow + "☢ " + white + "No player matches the name: " + yellow + "{0}", playerName));
                 return;
             }
-            pl.MessageFrom(Core.Name, string.Format("{0}  player{1} {2}: ", ((list.Count - 1)).ToString(), (((list.Count - 1) > 1) ? "s match" : " matches"), playerName));
+            pl.MessageFrom(Core.Name, string.Format("☢ " + cyan + "{0} " + white + "{1}:", ((list.Count - 1)).ToString(), (((list.Count - 1) > 1) ? "Player was found:" : "Players were found:")));
             for (int i = 1; i < list.Count; i++)
             {
-                pl.MessageFrom(Core.Name, string.Format("{0} - {1}", i, list.PlayerList[i].DisplayName));
+                pl.MessageFrom(Core.Name, string.Format("☢ " + cyan + "{0} " + white + "- {1}", i, list.PlayerList[i].DisplayName));
             }
             pl.MessageFrom(Core.Name, "☢ " + cyan + "0" + white + " - Cancel");
             pl.MessageFrom(Core.Name, "☢ " + cyan + "Please enter the number matching the player.");

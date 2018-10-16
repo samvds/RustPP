@@ -36,10 +36,10 @@
             }
             else
             {
-                pl.MessageFrom(Core.Name, string.Format("{0}  players match  {1}: ", query.Count(), queryName));
+                pl.MessageFrom(Core.Name, string.Format("☢ " + cyan + "{0} " + white + "players match " + cyan + "{1}" + white + ": ", query.Count(), queryName));
                 for (int i = 1; i < query.Count(); i++)
                 {
-                    pl.MessageFrom(Core.Name, string.Format("{0} - {1}", i, query.ElementAt(i).DisplayName));
+                    pl.MessageFrom(Core.Name, string.Format("☢ " + cyan + "{0} " + white + "- {1}", i, query.ElementAt(i).DisplayName));
                 }
                 pl.MessageFrom(Core.Name, "☢ " + cyan + "0" + white + " - Cancel");
                 pl.MessageFrom(Core.Name, "☢ " + cyan + "Please enter the number matching the player.");

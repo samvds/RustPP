@@ -92,11 +92,11 @@
             }
             admins.AddRange(match.Distinct());
             pl.MessageFrom(Core.Name,
-                string.Format("{0}  player{1} {2}: ", ((admins.Count - 1)).ToString(), (((admins.Count - 1) > 1) ? "s match" : " matches"), string.Join(" ", name.ToArray())));
+                string.Format("☢ " + cyan + "{0} " + white + "{1}", ((admins.Count - 1)).ToString(), (((admins.Count - 1) == 1) ? "Player was found:" : "Players were found:")));
 
             for (int i = 1; i < admins.Count; i++)
             {
-                pl.MessageFrom(Core.Name, string.Format("{0} - {1}", i, admins[i].DisplayName));
+                pl.MessageFrom(Core.Name, string.Format("☢ " + cyan + "{0} " + white + "- {1}", i, admins[i].DisplayName));
             }
             pl.MessageFrom(Core.Name, "☢ " + cyan + "0" + white + " - Cancel");
             pl.MessageFrom(Core.Name, "☢ " + cyan + "Please enter the number matching the player.");
