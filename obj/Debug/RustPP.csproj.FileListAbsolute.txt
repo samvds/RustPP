@@ -8,3 +8,13 @@ D:\Alles\Rust\Legacy Plugins\bin\modules\RustPP\RustPP.pdb
 D:\Alles\Rust\Legacy Plugins\RustPP\obj\Debug\RustPP.csproj.CopyComplete
 D:\Alles\Rust\Legacy Plugins\RustPP\obj\Debug\RustPP.dll
 D:\Alles\Rust\Legacy Plugins\RustPP\obj\Debug\RustPP.pdb
+D:\Server Files\Important Files (Legacy Lives)\Rust\Legacy Plugins\bin\modules\RustPP\Configs\rules.txt
+D:\Server Files\Important Files (Legacy Lives)\Rust\Legacy Plugins\bin\modules\RustPP\Configs\Rust++.cfg
+D:\Server Files\Important Files (Legacy Lives)\Rust\Legacy Plugins\bin\modules\RustPP\Configs\Localities.ini
+D:\Server Files\Important Files (Legacy Lives)\Rust\Legacy Plugins\bin\modules\RustPP\RustPP.dll
+D:\Server Files\Important Files (Legacy Lives)\Rust\Legacy Plugins\bin\modules\RustPP\RustPP.pdb
+D:\Server Files\Important Files (Legacy Lives)\Rust\Legacy Plugins\RustPP\obj\Debug\RustPP.csprojAssemblyReference.cache
+D:\Server Files\Important Files (Legacy Lives)\Rust\Legacy Plugins\RustPP\obj\Debug\RustPP.csproj.CoreCompileInputs.cache
+D:\Server Files\Important Files (Legacy Lives)\Rust\Legacy Plugins\RustPP\obj\Debug\RustPP.csproj.CopyComplete
+D:\Server Files\Important Files (Legacy Lives)\Rust\Legacy Plugins\RustPP\obj\Debug\RustPP.dll
+D:\Server Files\Important Files (Legacy Lives)\Rust\Legacy Plugins\RustPP\obj\Debug\RustPP.pdb

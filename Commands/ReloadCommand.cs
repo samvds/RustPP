@@ -14,7 +14,7 @@
         public override void Execute(ref ConsoleSystem.Arg Arguments, ref string[] ChatArguments)
         {
             Fougerite.Player sender = Fougerite.Server.Cache[Arguments.argUser.userID];
-            sender.MessageFrom(Core.Name, "☢ " + cyan + "Reloading: [ " + white + "admins.xml | whitelist.xml | bans.xml " + cyan + "]");
+            sender.MessageFrom(Core.Name, "☢ " + cyan + "Reloading: " + white + "[ " + cyan + "admins.xml " + white + "|" + cyan + " whitelist.xml " + white + "|" + cyan + " bans.xml " + white + "]");
             TimedEvents.startEvents();
             if (File.Exists(RustPPModule.GetAbsoluteFilePath("admins.xml")))
             {
